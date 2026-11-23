@@ -17,7 +17,7 @@
 
 - name: 3. Установка Docker Compose
   apt:
-    name: docker-compose
+    name: docker compose
     state: present
 
 - name: 4. Добавление пользователя в группу docker
@@ -36,7 +36,7 @@
     - deploy
 
 - name: 6. Запуск контейнеров через Docker Compose
-  command: docker-compose up -d --build
+  command: docker compose up -d --build
   args:
     chdir: /home/{{ ansible_user }}/DevOps
   tags:
@@ -44,7 +44,7 @@
     - up
 
 - name: 7. Остановка контейнеров через Docker Compose
-  command: docker-compose down
+  command: docker compose down
   args:
     chdir: /home/{{ ansible_user }}/DevOps
   tags:
