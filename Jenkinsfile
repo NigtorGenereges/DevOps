@@ -7,6 +7,7 @@ pipeline {
                 echo 'Установка зависимостей и клонирование...'
                 dir('ansible') {
                     ansiblePlaybook(
+			installation: 'ansible',
                         playbook: 'run_playbook.yml',
                         inventory: 'hosts',
                         tags: 'deploy',
@@ -21,6 +22,7 @@ pipeline {
                 echo 'Запуск контейнеров через Docker Compose...'
                 dir('ansible') {
                     ansiblePlaybook(
+			installation: 'ansible',
                         playbook: 'run_playbook.yml',
                         inventory: 'hosts',
                         tags: 'up',
