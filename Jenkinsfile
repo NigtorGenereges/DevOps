@@ -10,7 +10,7 @@ pipeline {
                         playbook: 'run_playbook.yml',
                         inventory: 'hosts',
                         tags: 'deploy',
-                        colored: true
+                        colorized: true
                     )
                 }
             }
@@ -24,7 +24,7 @@ pipeline {
                         playbook: 'run_playbook.yml',
                         inventory: 'hosts',
                         tags: 'up',
-                        colored: true
+                        colorized: true
                     )
                 }
             }
