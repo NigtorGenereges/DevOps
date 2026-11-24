@@ -29,7 +29,7 @@
 - name: 5. Клонирование репозитория DevOps
   git:
     repo: 'https://github.com/NigtorGenereges/DevOps.git'
-    dest: /home/{{ ansible_user }}/DevOps
+    dest: /var/jenkins_home/DevOps
     version: main
     force: yes
   tags:
