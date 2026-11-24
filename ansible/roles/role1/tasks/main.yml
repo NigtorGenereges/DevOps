@@ -22,7 +22,7 @@
 
 - name: 4. Добавление пользователя в группу docker
   user:
-    name: "{{ ansible_user }}"
+    name: "jenkins"
     groups: docker
     append: yes
 
@@ -38,7 +38,7 @@
 - name: 6. Запуск контейнеров через Docker Compose
   command: docker compose up -d --build
   args:
-    chdir: /home/{{ ansible_user }}/DevOps
+    chdir: /var/jenkins_home/DevOps
   tags:
     - deploy
     - up
@@ -46,7 +46,7 @@
 - name: 7. Остановка контейнеров через Docker Compose
   command: docker compose down
   args:
-    chdir: /home/{{ ansible_user }}/DevOps
+    chdir: /var/jenkins_home/DevOps
   tags:
     - stop
     - down
